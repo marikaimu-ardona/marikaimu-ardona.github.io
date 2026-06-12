@@ -15,6 +15,7 @@
   if (toggle && menu) {
     toggle.addEventListener("click", function () {
       var open = menu.classList.toggle("open");
+      toggle.classList.toggle("is-open", open);
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
     });
 
@@ -22,10 +23,50 @@
     menu.addEventListener("click", function (e) {
       if (e.target.tagName === "A") {
         menu.classList.remove("open");
+        toggle.classList.remove("is-open");
         toggle.setAttribute("aria-expanded", "false");
       }
     });
   }
+
+  // --- Dark mode toggle ---
+  var themeToggle = document.getElementById("theme-toggle");
+  if (themeToggle) {
+    themeToggle.addEventListener("click", function () {
+      var current = document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
+      var next = current === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", next);
+      try {
+        localStorage.setItem("theme", next);
+      } catch (e) {}
+    });
+  }
+
+  // --- Count-up stats ---
+  var prefersReduced =
+    window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var counters = document.querySelectorAll("[data-count-to]");
+  counters.forEach(function (el) {
+    var target = parseInt(el.getAttribute("data-count-to"), 10) || 0;
+    var prefix = el.getAttribute("data-prefix") || "";
+    var suffix = el.getAttribute("data-suffix") || "";
+    if (prefersReduced) {
+      el.textContent = prefix + target + suffix;
+      return;
+    }
+    var duration = 1100;
+    var start = null;
+    el.textContent = prefix + "0" + suffix;
+    function step(ts) {
+      if (start === null) start = ts;
+      var p = Math.min((ts - start) / duration, 1);
+      var eased = 1 - Math.pow(1 - p, 3); // easeOutCubic
+      el.textContent = prefix + Math.round(eased * target) + suffix;
+      if (p < 1) requestAnimationFrame(step);
+      else el.textContent = prefix + target + suffix;
+    }
+    requestAnimationFrame(step);
+  });
 
   // --- Scroll reveal ---
   var revealEls = document.querySelectorAll(".reveal");

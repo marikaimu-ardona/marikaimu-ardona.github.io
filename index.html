@@ -117,96 +117,197 @@
 
         <div class="projects">
 
-          <article class="project reveal">
-            <div class="project-media" aria-hidden="true"><span>NCCHC</span></div>
-            <div class="project-body">
-              <div class="project-meta">
-                <span class="project-tag-role">Lead Front End</span>
-                <span class="project-date">Live since Jun 2025</span>
-              </div>
-              <h3 class="project-title">National Criminal Checks</h3>
-              <p class="project-desc">
-                An Australian criminal background-check platform. I led the front end, including Stripe
-                payments and a points-based ID and selfie verification flow, integrating the AWS Rekognition
-                and NSS submission APIs delivered by the backend team, plus complex name-validation logic
-                across legal name, alias, and maiden name.
-              </p>
-              <ul class="project-tech">
-                <li>Vue</li><li>JavaScript</li><li>Liquid</li><li>GraphQL</li><li>Stripe</li>
-              </ul>
-              <a class="project-link" href="https://www.fdcachecks.com.au/" target="_blank" rel="noopener noreferrer">
-                Visit live site <span aria-hidden="true">&rarr;</span>
-              </a>
+          <!-- Osstem Implant Australia -->
+          <article class="project-card reveal" data-dialog="dlg-oss">
+            <div class="project-banner">
+              <img src="img/oss/oss_banner.png" alt="Osstem Implant logo" loading="lazy" />
             </div>
-          </article>
-
-          <article class="project reveal">
-            <div class="project-media" aria-hidden="true"><span>ABCC</span></div>
-            <div class="project-body">
+            <div class="project-card-body">
               <div class="project-meta">
                 <span class="project-tag-role">Lead Front End</span>
-                <span class="project-date">Live since Apr 2024</span>
-              </div>
-              <h3 class="project-title">Australian British Chamber of Commerce</h3>
-              <p class="project-desc">
-                An events platform for the chamber. I led the front end and built a
-                Make.com automation that syncs Xero and SendGrid and surfaces error alerts to Slack in
-                real time, keeping event operations and finance in step.
-              </p>
-              <ul class="project-tech">
-                <li>Liquid</li><li>JavaScript</li><li>GraphQL</li><li>Stripe</li><li>Make.com</li>
-              </ul>
-              <a class="project-link" href="https://www.britishchamber.com/" target="_blank" rel="noopener noreferrer">
-                Visit live site <span aria-hidden="true">&rarr;</span>
-              </a>
-            </div>
-          </article>
-
-          <article class="project reveal">
-            <div class="project-media" aria-hidden="true"><span>REIA</span></div>
-            <div class="project-body">
-              <div class="project-meta">
-                <span class="project-tag-role">Lead Front End</span>
-                <span class="project-date">Live since Feb 2026</span>
-              </div>
-              <h3 class="project-title">Real Estate Institute of Australia</h3>
-              <p class="project-desc">
-                A platform for Australia's peak real estate body. I led the front end and delivered the
-                company's first Stripe subscription-webhook implementation, alongside Make.com-driven Xero
-                and SendGrid updates for a fully automated membership flow.
-              </p>
-              <ul class="project-tech">
-                <li>Liquid</li><li>JavaScript</li><li>GraphQL</li><li>Stripe</li><li>Make.com</li>
-              </ul>
-              <a class="project-link" href="https://www.reia.com.au/" target="_blank" rel="noopener noreferrer">
-                Visit live site <span aria-hidden="true">&rarr;</span>
-              </a>
-            </div>
-          </article>
-
-          <article class="project reveal">
-            <div class="project-media" aria-hidden="true"><span>Osstem</span></div>
-            <div class="project-body">
-              <div class="project-meta">
-                <span class="project-tag-role">Lead Front End</span>
-                <span class="project-date">Live since Nov 2023</span>
+                <span class="project-date">Nov 2023</span>
               </div>
               <h3 class="project-title">Osstem Implant Australia</h3>
-              <p class="project-desc">
-                The Australian site for Osstem, one of the world's largest dental-implant manufacturers. I led
-                the front end, building the catalogue architecture, a multi-level menu and submenu system
-                spanning implant systems, surgical kits, and equipment, with a clean, professional UI. I also
-                implemented Stripe payments for the implant-training course enrolment. The product eShop is
-                handled by a third-party provider.
-              </p>
+              <p class="project-blurb">Catalogue architecture and a clean UI for a global dental-implant brand, with Stripe-powered course enrolment.</p>
               <ul class="project-tech">
                 <li>Liquid</li><li>JavaScript</li><li>HTML5</li><li>CSS3</li><li>Stripe</li>
               </ul>
-              <a class="project-link" href="https://www.osstem.com.au/" target="_blank" rel="noopener noreferrer">
-                Visit live site <span aria-hidden="true">&rarr;</span>
-              </a>
+              <button type="button" class="project-view" data-dialog="dlg-oss" aria-haspopup="dialog" aria-controls="dlg-oss">
+                View details <span aria-hidden="true">&rarr;</span>
+              </button>
             </div>
           </article>
+
+          <!-- Australian British Chamber of Commerce -->
+          <article class="project-card reveal" data-dialog="dlg-abcc">
+            <div class="project-banner">
+              <span class="project-banner-fallback" aria-hidden="true">ABCC</span>
+            </div>
+            <div class="project-card-body">
+              <div class="project-meta">
+                <span class="project-tag-role">Lead Front End</span>
+                <span class="project-date">Apr 2024</span>
+              </div>
+              <h3 class="project-title">Australian British Chamber of Commerce</h3>
+              <p class="project-blurb">Events platform with a Make.com automation syncing Xero and SendGrid, plus real-time Slack error alerts.</p>
+              <ul class="project-tech">
+                <li>Liquid</li><li>JavaScript</li><li>GraphQL</li><li>Stripe</li><li>Make.com</li>
+              </ul>
+              <button type="button" class="project-view" data-dialog="dlg-abcc" aria-haspopup="dialog" aria-controls="dlg-abcc">
+                View details <span aria-hidden="true">&rarr;</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- National Criminal Checks -->
+          <article class="project-card reveal" data-dialog="dlg-ncchc">
+            <div class="project-banner">
+              <span class="project-banner-fallback" aria-hidden="true">NCCHC</span>
+            </div>
+            <div class="project-card-body">
+              <div class="project-meta">
+                <span class="project-tag-role">Lead Front End</span>
+                <span class="project-date">Jun 2025</span>
+              </div>
+              <h3 class="project-title">National Criminal Checks</h3>
+              <p class="project-blurb">Criminal background-check platform with Stripe payments and a points-based ID and selfie verification flow.</p>
+              <ul class="project-tech">
+                <li>Vue</li><li>JavaScript</li><li>Liquid</li><li>GraphQL</li><li>Stripe</li>
+              </ul>
+              <button type="button" class="project-view" data-dialog="dlg-ncchc" aria-haspopup="dialog" aria-controls="dlg-ncchc">
+                View details <span aria-hidden="true">&rarr;</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Real Estate Institute of Australia -->
+          <article class="project-card reveal" data-dialog="dlg-reia">
+            <div class="project-banner">
+              <span class="project-banner-fallback" aria-hidden="true">REIA</span>
+            </div>
+            <div class="project-card-body">
+              <div class="project-meta">
+                <span class="project-tag-role">Lead Front End</span>
+                <span class="project-date">Feb 2026</span>
+              </div>
+              <h3 class="project-title">Real Estate Institute of Australia</h3>
+              <p class="project-blurb">The company's first Stripe subscription-webhook implementation, with Make.com-driven Xero and SendGrid automation.</p>
+              <ul class="project-tech">
+                <li>Liquid</li><li>JavaScript</li><li>GraphQL</li><li>Stripe</li><li>Make.com</li>
+              </ul>
+              <button type="button" class="project-view" data-dialog="dlg-reia" aria-haspopup="dialog" aria-controls="dlg-reia">
+                View details <span aria-hidden="true">&rarr;</span>
+              </button>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- ============ Project detail dialogs ============ -->
+        <div class="dialogs">
+
+          <div class="dialog-backdrop" id="dlg-oss" role="dialog" aria-modal="true" aria-labelledby="dlg-oss-t" hidden>
+            <div class="dialog">
+              <button class="dialog-close" type="button" aria-label="Close details">&times;</button>
+              <figure class="dialog-figure">
+                <img src="img/oss/oss_screens.jpg" alt="Screens from the Osstem Implant Australia website" />
+              </figure>
+              <div class="dialog-content">
+                <div class="project-meta">
+                  <span class="project-tag-role">Lead Front End</span>
+                  <span class="project-date">Live since Nov 2023</span>
+                </div>
+                <h3 id="dlg-oss-t">Osstem Implant Australia</h3>
+                <p>
+                  Osstem Implant is the world's 4th largest dental-implant company, used in more than 80
+                  countries, and a leading implant brand out of Korea. For the Australian site I led the front
+                  end, building the catalogue architecture, a multi-level menu and submenu system spanning
+                  implant systems, surgical kits, and equipment, with a clean, professional UI. I also
+                  implemented Stripe payments for the implant-training course enrolment. The product eShop is
+                  handled by a third-party provider.
+                </p>
+                <ul class="project-tech">
+                  <li>Liquid</li><li>JavaScript</li><li>HTML5</li><li>CSS3</li><li>Stripe</li>
+                </ul>
+                <a class="btn btn-primary" href="https://www.osstem.com.au/" target="_blank" rel="noopener noreferrer">
+                  Visit live site <span aria-hidden="true">&rarr;</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="dialog-backdrop" id="dlg-abcc" role="dialog" aria-modal="true" aria-labelledby="dlg-abcc-t" hidden>
+            <div class="dialog no-figure">
+              <button class="dialog-close" type="button" aria-label="Close details">&times;</button>
+              <div class="dialog-content">
+                <div class="project-meta">
+                  <span class="project-tag-role">Lead Front End</span>
+                  <span class="project-date">Live since Apr 2024</span>
+                </div>
+                <h3 id="dlg-abcc-t">Australian British Chamber of Commerce</h3>
+                <p>
+                  An events platform for the chamber. I led the front end and built a Make.com automation that
+                  syncs Xero and SendGrid and surfaces error alerts to Slack in real time, keeping event
+                  operations and finance in step.
+                </p>
+                <ul class="project-tech">
+                  <li>Liquid</li><li>JavaScript</li><li>GraphQL</li><li>Stripe</li><li>Make.com</li>
+                </ul>
+                <a class="btn btn-primary" href="https://www.britishchamber.com/" target="_blank" rel="noopener noreferrer">
+                  Visit live site <span aria-hidden="true">&rarr;</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="dialog-backdrop" id="dlg-ncchc" role="dialog" aria-modal="true" aria-labelledby="dlg-ncchc-t" hidden>
+            <div class="dialog no-figure">
+              <button class="dialog-close" type="button" aria-label="Close details">&times;</button>
+              <div class="dialog-content">
+                <div class="project-meta">
+                  <span class="project-tag-role">Lead Front End</span>
+                  <span class="project-date">Live since Jun 2025</span>
+                </div>
+                <h3 id="dlg-ncchc-t">National Criminal Checks</h3>
+                <p>
+                  An Australian criminal background-check platform. I led the front end, including Stripe
+                  payments and a points-based ID and selfie verification flow, integrating the AWS Rekognition
+                  and NSS submission APIs delivered by the backend team, plus complex name-validation logic
+                  across legal name, alias, and maiden name.
+                </p>
+                <ul class="project-tech">
+                  <li>Vue</li><li>JavaScript</li><li>Liquid</li><li>GraphQL</li><li>Stripe</li>
+                </ul>
+                <a class="btn btn-primary" href="https://www.fdcachecks.com.au/" target="_blank" rel="noopener noreferrer">
+                  Visit live site <span aria-hidden="true">&rarr;</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="dialog-backdrop" id="dlg-reia" role="dialog" aria-modal="true" aria-labelledby="dlg-reia-t" hidden>
+            <div class="dialog no-figure">
+              <button class="dialog-close" type="button" aria-label="Close details">&times;</button>
+              <div class="dialog-content">
+                <div class="project-meta">
+                  <span class="project-tag-role">Lead Front End</span>
+                  <span class="project-date">Live since Feb 2026</span>
+                </div>
+                <h3 id="dlg-reia-t">Real Estate Institute of Australia</h3>
+                <p>
+                  A platform for Australia's peak real estate body. I led the front end and delivered the
+                  company's first Stripe subscription-webhook implementation, alongside Make.com-driven Xero
+                  and SendGrid updates for a fully automated membership flow.
+                </p>
+                <ul class="project-tech">
+                  <li>Liquid</li><li>JavaScript</li><li>GraphQL</li><li>Stripe</li><li>Make.com</li>
+                </ul>
+                <a class="btn btn-primary" href="https://www.reia.com.au/" target="_blank" rel="noopener noreferrer">
+                  Visit live site <span aria-hidden="true">&rarr;</span>
+                </a>
+              </div>
+            </div>
+          </div>
 
         </div>
       </div>

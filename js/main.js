@@ -51,4 +51,74 @@
       el.classList.add("is-visible");
     });
   }
+
+  // --- Project detail dialogs ---
+  var projectsWrap = document.querySelector(".projects");
+  var lastFocused = null;
+
+  function openDialog(id) {
+    var dlg = document.getElementById(id);
+    if (!dlg) return;
+    lastFocused = document.activeElement;
+    dlg.hidden = false;
+    document.body.classList.add("dialog-open");
+    var closeBtn = dlg.querySelector(".dialog-close");
+    if (closeBtn) closeBtn.focus();
+  }
+
+  function closeDialog(dlg) {
+    if (!dlg) return;
+    dlg.hidden = true;
+    document.body.classList.remove("dialog-open");
+    if (lastFocused && typeof lastFocused.focus === "function") {
+      lastFocused.focus();
+    }
+  }
+
+  if (projectsWrap) {
+    projectsWrap.addEventListener("click", function (e) {
+      var trigger = e.target.closest("[data-dialog]");
+      if (trigger) {
+        e.preventDefault();
+        openDialog(trigger.getAttribute("data-dialog"));
+      }
+    });
+  }
+
+  var backdrops = document.querySelectorAll(".dialog-backdrop");
+  backdrops.forEach(function (dlg) {
+    dlg.addEventListener("click", function (e) {
+      // Close on backdrop click or close-button click
+      if (e.target === dlg || e.target.closest(".dialog-close")) {
+        closeDialog(dlg);
+      }
+    });
+  });
+
+  document.addEventListener("keydown", function (e) {
+    var open = document.querySelector(".dialog-backdrop:not([hidden])");
+    if (!open) return;
+
+    if (e.key === "Escape") {
+      closeDialog(open);
+      return;
+    }
+
+    // Simple focus trap inside the open dialog
+    if (e.key === "Tab") {
+      var focusables = open.querySelectorAll(
+        'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+      );
+      if (!focusables.length) return;
+      var first = focusables[0];
+      var last = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
+  });
 })();

@@ -105,6 +105,8 @@ a { color: var(--accent); text-decoration: none; }
 
 .nav-cluster { display: flex; align-items: center; gap: 8px; }
 
+.nav-overlay { display: none; }
+
 .nav-toggle { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 42px; height: 42px; align-items: center; background: none; border: 0; cursor: pointer; }
 .nav-toggle span { width: 24px; height: 2px; background: var(--ink); border-radius: 2px; transition: transform .25s ease, opacity .25s ease; }
 .nav-toggle.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
@@ -127,13 +129,18 @@ a { color: var(--accent); text-decoration: none; }
 /* ---------- Hero ---------- */
 .hero {
   position: relative;
-  padding: 96px 0 84px;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  padding: 96px 0 72px;
   background:
     radial-gradient(900px 420px at 80% -10%, rgba(47,125,168,.14), transparent 60%),
     radial-gradient(700px 380px at 0% 10%, rgba(31,78,107,.10), transparent 55%),
     var(--bg);
   overflow: hidden;
 }
+.hero-inner { width: 100%; }
 .hero-eyebrow {
   text-transform: uppercase;
   letter-spacing: 2.5px;
@@ -174,6 +181,8 @@ a { color: var(--accent); text-decoration: none; }
 .about-body p + p { margin-top: 16px; }
 
 /* ---------- Projects (card grid) ---------- */
+/* Work section spans the full width (no max-width), with scaling gutters */
+#work .container { max-width: none; padding-left: clamp(24px, 5vw, 72px); padding-right: clamp(24px, 5vw, 72px); }
 .projects { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .project-card {
   display: flex;
@@ -332,23 +341,69 @@ body.dialog-open { overflow: hidden; }
 /* Collapse the nav to a toggle menu before the links crowd the toggle */
 @media (max-width: 820px) {
   .nav-toggle { display: flex; }
+
   .nav-menu {
     position: absolute;
-    top: 66px;
-    left: 0;
-    right: 0;
+    top: calc(100% + 10px);
+    right: 16px;
+    left: 16px;
     flex-direction: column;
     align-items: stretch;
-    gap: 4px;
+    gap: 2px;
     background: var(--card);
-    border-bottom: 1px solid var(--rule);
-    padding: 14px 24px 20px;
-    box-shadow: var(--shadow);
-    display: none;
+    border: 1px solid var(--rule);
+    border-radius: 16px;
+    padding: 10px;
+    box-shadow: 0 22px 48px rgba(16,32,43,.24);
+    z-index: 60;
+    /* closed state (kept in DOM so it can animate) */
+    display: flex;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px) scale(.98);
+    transform-origin: top right;
+    transition: opacity .22s ease, transform .22s ease, visibility .22s;
   }
-  .nav-menu.open { display: flex; }
-  .nav-menu a { padding: 12px 14px; }
-  .nav-menu a.nav-cta { text-align: center; margin-top: 4px; }
+  .nav-menu.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+  }
+
+  .nav-menu li { width: 100%; }
+  .nav-menu a {
+    display: block;
+    padding: 13px 16px;
+    border-radius: 11px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--ink);
+    transition: background .15s ease, color .15s ease;
+  }
+  .nav-menu a:hover,
+  .nav-menu a:active { background: var(--bg-alt); color: var(--accent); }
+  .nav-menu li:last-child { margin-top: 8px; padding-top: 12px; border-top: 1px solid var(--rule); }
+  .nav-menu a.nav-cta {
+    text-align: center;
+    background: var(--accent);
+    color: #fff;
+    font-weight: 600;
+  }
+  .nav-menu a.nav-cta:hover { background: var(--accent-2); color: #fff; }
+
+  .nav-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 40;
+    background: rgba(8,14,20,.45);
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .22s ease, visibility .22s;
+  }
+  .nav-overlay.show { opacity: 1; visibility: visible; }
 }
 
 @media (max-width: 640px) {

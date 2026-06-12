@@ -12,20 +12,32 @@
   var toggle = document.querySelector(".nav-toggle");
   var menu = document.getElementById("nav-menu");
 
+  var navOverlay = document.querySelector(".nav-overlay");
+
+  function setNav(open) {
+    if (!menu || !toggle) return;
+    menu.classList.toggle("open", open);
+    toggle.classList.toggle("is-open", open);
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    if (navOverlay) navOverlay.classList.toggle("show", open);
+  }
+
   if (toggle && menu) {
     toggle.addEventListener("click", function () {
-      var open = menu.classList.toggle("open");
-      toggle.classList.toggle("is-open", open);
-      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      setNav(!menu.classList.contains("open"));
     });
 
-    // Close the menu after tapping a link (mobile)
+    // Close after tapping a link, tapping the backdrop, or pressing Escape
     menu.addEventListener("click", function (e) {
-      if (e.target.tagName === "A") {
-        menu.classList.remove("open");
-        toggle.classList.remove("is-open");
-        toggle.setAttribute("aria-expanded", "false");
-      }
+      if (e.target.tagName === "A") setNav(false);
+    });
+    if (navOverlay) {
+      navOverlay.addEventListener("click", function () {
+        setNav(false);
+      });
+    }
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && menu.classList.contains("open")) setNav(false);
     });
   }
 

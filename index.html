@@ -112,10 +112,31 @@
         <header class="section-head reveal">
           <span class="section-index">02</span>
           <h2>Selected Work</h2>
-          <p class="section-sub">Live products where I led the front-end build.</p>
+          <p class="section-sub">The Insites platform template these projects start from, and the live products built on it.</p>
         </header>
 
         <div class="projects">
+
+          <!-- Website & Portal template (foundation) -->
+          <article class="project-card reveal" data-dialog="dlg-wpt">
+            <div class="project-banner project-banner--top">
+              <img src="img/wpt/wpt_screen.jpg" alt="Website and Portal base template" loading="lazy" />
+            </div>
+            <div class="project-card-body">
+              <div class="project-meta">
+                <span class="project-tag-role">Lead Front End</span>
+                <span class="project-date">Base Template</span>
+              </div>
+              <h3 class="project-title">Website &amp; Portal v1.3.2</h3>
+              <p class="project-blurb">The base template every project here starts from. I led the current version (v1.3.2).</p>
+              <ul class="project-tech">
+                <li>Liquid</li><li>JavaScript</li><li>HTML5</li><li>CSS3</li><li>GraphQL</li><li>Stripe</li>
+              </ul>
+              <button type="button" class="project-view" data-dialog="dlg-wpt" aria-haspopup="dialog" aria-controls="dlg-wpt">
+                View details <span aria-hidden="true">&rarr;</span>
+              </button>
+            </div>
+          </article>
 
           <!-- Osstem Implant Australia -->
           <article class="project-card reveal" data-dialog="dlg-oss">
@@ -268,6 +289,34 @@
 
         <!-- ============ Project detail dialogs ============ -->
         <div class="dialogs">
+
+          <div class="dialog-backdrop" id="dlg-wpt" role="dialog" aria-modal="true" aria-labelledby="dlg-wpt-t" hidden>
+            <div class="dialog">
+              <button class="dialog-close" type="button" aria-label="Close details">&times;</button>
+              <figure class="dialog-figure">
+                <img src="img/wpt/wpt_screen.jpg" alt="Website and Portal base template" />
+              </figure>
+              <div class="dialog-content">
+                <div class="project-meta">
+                  <span class="project-tag-role">Lead Front End</span>
+                  <span class="project-date">Base Template</span>
+                </div>
+                <h3 id="dlg-wpt-t">Website &amp; Portal v1.3.2</h3>
+                <p>
+                  Website and Portal v1.3.2 is the base template that every project in this showcase is built
+                  on. It provides the core website and client-portal foundation, a unified starting point that
+                  each project then customises for its own brand, content, and features. I led the current
+                  version, refining the shared website and portal foundation the team now builds on.
+                </p>
+                <ul class="project-tech">
+                  <li>Liquid</li><li>JavaScript</li><li>HTML5</li><li>CSS3</li><li>GraphQL</li><li>Stripe</li>
+                </ul>
+                <a class="btn btn-primary" href="https://website-and-portal-v132-release.staging.oregon.platform-os.com/" target="_blank" rel="noopener noreferrer">
+                  View the template <span aria-hidden="true">&rarr;</span>
+                </a>
+              </div>
+            </div>
+          </div>
 
           <div class="dialog-backdrop" id="dlg-oss" role="dialog" aria-modal="true" aria-labelledby="dlg-oss-t" hidden>
             <div class="dialog">

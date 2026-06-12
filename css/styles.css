@@ -206,9 +206,9 @@ a { color: var(--accent); text-decoration: none; }
 }
 .dialog-close:hover { background: #fff; transform: scale(1.05); }
 .dialog-figure { margin: 0; background: var(--bg-alt); border-bottom: 1px solid var(--rule); }
-.dialog-figure img { width: 100%; display: block; }
+.dialog-figure img { width: 100%; display: block; max-height: 440px; object-fit: cover; object-position: center; }
 .dialog-figure--grid { display: grid; grid-template-columns: 1fr 1fr; }
-.dialog-figure--grid img { height: auto; }
+.dialog-figure--grid img { height: auto; max-height: none; object-fit: contain; }
 .dialog-content { padding: 26px 30px 32px; }
 .dialog.no-figure .dialog-content { padding-top: 54px; }
 .dialog-content h3 { font-size: 25px; font-weight: 800; letter-spacing: -.4px; line-height: 1.2; margin-top: 4px; }

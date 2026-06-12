@@ -129,18 +129,13 @@ a { color: var(--accent); text-decoration: none; }
 /* ---------- Hero ---------- */
 .hero {
   position: relative;
-  min-height: 100vh;
-  min-height: 100dvh;
-  display: flex;
-  align-items: center;
-  padding: 96px 0 72px;
+  padding: 104px 0 88px;
   background:
     radial-gradient(900px 420px at 80% -10%, rgba(47,125,168,.14), transparent 60%),
     radial-gradient(700px 380px at 0% 10%, rgba(31,78,107,.10), transparent 55%),
     var(--bg);
   overflow: hidden;
 }
-.hero-inner { width: 100%; }
 .hero-eyebrow {
   text-transform: uppercase;
   letter-spacing: 2.5px;

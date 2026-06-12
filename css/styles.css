@@ -207,12 +207,16 @@ a { color: var(--accent); text-decoration: none; }
 .dialog-close:hover { background: #fff; transform: scale(1.05); }
 .dialog-figure { margin: 0; background: var(--bg-alt); border-bottom: 1px solid var(--rule); }
 .dialog-figure img { width: 100%; display: block; }
+.dialog-figure--grid { display: grid; grid-template-columns: 1fr 1fr; }
+.dialog-figure--grid img { height: auto; }
 .dialog-content { padding: 26px 30px 32px; }
 .dialog.no-figure .dialog-content { padding-top: 54px; }
 .dialog-content h3 { font-size: 25px; font-weight: 800; letter-spacing: -.4px; line-height: 1.2; margin-top: 4px; }
 .dialog-content p { margin-top: 14px; color: var(--muted); font-size: 16px; }
 .dialog-content .project-tech { margin-top: 18px; }
-.dialog-content .btn { margin-top: 22px; }
+.dialog-content .btn { margin-top: 22px; gap: 9px; }
+.dialog-content .btn span { display: inline-block; transition: transform .18s ease; }
+.dialog-content .btn:hover span { transform: translateX(5px); }
 body.dialog-open { overflow: hidden; }
 
 /* ---------- AI Tooling ---------- */
@@ -301,6 +305,7 @@ body.dialog-open { overflow: hidden; }
   .nav-menu.open { display: flex; }
   .nav-menu a { padding: 12px 14px; }
   .skills-grid { grid-template-columns: 1fr; }
+  .dialog-figure--grid { grid-template-columns: 1fr; }
   .hero { padding: 64px 0 56px; }
   .hero-stats { gap: 26px; }
   .footer-inner { justify-content: center; text-align: center; }

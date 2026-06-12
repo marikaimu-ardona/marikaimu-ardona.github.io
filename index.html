@@ -130,7 +130,7 @@
               <h3 class="project-title">Osstem Implant Australia</h3>
               <p class="project-blurb">Catalogue architecture and a clean UI for a global dental-implant brand, with Stripe-powered course enrolment.</p>
               <ul class="project-tech">
-                <li>Liquid</li><li>JavaScript</li><li>HTML5</li><li>CSS3</li><li>Stripe</li>
+                <li>Liquid</li><li>JavaScript</li><li>HTML5</li><li>CSS3</li><li>GraphQL</li><li>Stripe</li>
               </ul>
               <button type="button" class="project-view" data-dialog="dlg-oss" aria-haspopup="dialog" aria-controls="dlg-oss">
                 View details <span aria-hidden="true">&rarr;</span>
@@ -141,7 +141,7 @@
           <!-- Australian British Chamber of Commerce -->
           <article class="project-card reveal" data-dialog="dlg-abcc">
             <div class="project-banner">
-              <span class="project-banner-fallback" aria-hidden="true">ABCC</span>
+              <img src="img/bcc/bcc_banner.png" alt="Australian British Chamber of Commerce logo" loading="lazy" />
             </div>
             <div class="project-card-body">
               <div class="project-meta">
@@ -159,17 +159,17 @@
             </div>
           </article>
 
-          <!-- National Criminal Checks -->
+          <!-- Nationally Coordinated Criminal History Checks -->
           <article class="project-card reveal" data-dialog="dlg-ncchc">
             <div class="project-banner">
-              <span class="project-banner-fallback" aria-hidden="true">NCCHC</span>
+              <img src="img/ncchc/ncchc_banner.png" alt="Family Day Care Australia logo" loading="lazy" />
             </div>
             <div class="project-card-body">
               <div class="project-meta">
                 <span class="project-tag-role">Lead Front End</span>
                 <span class="project-date">Jun 2025</span>
               </div>
-              <h3 class="project-title">National Criminal Checks</h3>
+              <h3 class="project-title">Nationally Coordinated Criminal History Checks</h3>
               <p class="project-blurb">Criminal background-check platform with Stripe payments and a points-based ID and selfie verification flow.</p>
               <ul class="project-tech">
                 <li>Vue</li><li>JavaScript</li><li>Liquid</li><li>GraphQL</li><li>Stripe</li>
@@ -227,7 +227,7 @@
                   handled by a third-party provider.
                 </p>
                 <ul class="project-tech">
-                  <li>Liquid</li><li>JavaScript</li><li>HTML5</li><li>CSS3</li><li>Stripe</li>
+                  <li>Liquid</li><li>JavaScript</li><li>HTML5</li><li>CSS3</li><li>GraphQL</li><li>Stripe</li>
                 </ul>
                 <a class="btn btn-primary" href="https://www.osstem.com.au/" target="_blank" rel="noopener noreferrer">
                   Visit live site <span aria-hidden="true">&rarr;</span>
@@ -237,8 +237,12 @@
           </div>
 
           <div class="dialog-backdrop" id="dlg-abcc" role="dialog" aria-modal="true" aria-labelledby="dlg-abcc-t" hidden>
-            <div class="dialog no-figure">
+            <div class="dialog">
               <button class="dialog-close" type="button" aria-label="Close details">&times;</button>
+              <figure class="dialog-figure dialog-figure--grid">
+                <img src="img/bcc/bcc_screen_1.png" alt="Australian British Chamber of Commerce homepage" />
+                <img src="img/bcc/bcc_screen_2.png" alt="Australian British Chamber of Commerce membership page" />
+              </figure>
               <div class="dialog-content">
                 <div class="project-meta">
                   <span class="project-tag-role">Lead Front End</span>
@@ -261,14 +265,17 @@
           </div>
 
           <div class="dialog-backdrop" id="dlg-ncchc" role="dialog" aria-modal="true" aria-labelledby="dlg-ncchc-t" hidden>
-            <div class="dialog no-figure">
+            <div class="dialog">
               <button class="dialog-close" type="button" aria-label="Close details">&times;</button>
+              <figure class="dialog-figure">
+                <img src="img/ncchc/ncchc_screen.png" alt="Screens from the Nationally Coordinated Criminal History Checks website" />
+              </figure>
               <div class="dialog-content">
                 <div class="project-meta">
                   <span class="project-tag-role">Lead Front End</span>
                   <span class="project-date">Live since Jun 2025</span>
                 </div>
-                <h3 id="dlg-ncchc-t">National Criminal Checks</h3>
+                <h3 id="dlg-ncchc-t">Nationally Coordinated Criminal History Checks</h3>
                 <p>
                   An Australian criminal background-check platform. I led the front end, including Stripe
                   payments and a points-based ID and selfie verification flow, integrating the AWS Rekognition

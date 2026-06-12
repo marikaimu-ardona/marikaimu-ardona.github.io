@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marikaimu Chris Ardoña — Résumé</title>
+<meta name="description" content="Résumé of Marikaimu Chris Ardoña, Senior Front End Developer." />
+<meta name="robots" content="noindex" />
+<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --muted: #555c66;
+    --faint: #7a818b;
+    --accent: #1f4e6b;
+    --accent-2: #2f7da8;
+    --accent-soft: #eef3f6;
+    --rule: #d9dee3;
+    --page: 210mm;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    background: #f4f5f7;
+    color: var(--ink);
+    font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+    font-size: 10.3pt;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ---------- Screen toolbar (hidden on print) ---------- */
+  .toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 20px;
+    background: rgba(255,255,255,0.9);
+    backdrop-filter: saturate(180%) blur(10px);
+    border-bottom: 1px solid var(--rule);
+    font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  }
+  .toolbar .tb-back { font-size: 11pt; font-weight: 600; color: var(--accent); text-decoration: none; }
+  .toolbar .tb-back:hover { color: var(--accent-2); }
+  .toolbar .tb-print {
+    border: 0;
+    cursor: pointer;
+    background: var(--accent);
+    color: #fff;
+    font-size: 10.5pt;
+    font-weight: 600;
+    padding: 9px 18px;
+    border-radius: 999px;
+    transition: background .15s ease;
+  }
+  .toolbar .tb-print:hover { background: var(--accent-2); }
+
+  .sheet {
+    width: var(--page);
+    min-height: 297mm;
+    margin: 24px auto;
+    padding: 18mm 16mm 14mm;
+    background: #fff;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.10);
+  }
+
+  /* ---------- Header ---------- */
+  header { border-bottom: 2px solid var(--accent); padding-bottom: 12px; }
+
+  .name {
+    font-size: 25pt;
+    font-weight: 700;
+    letter-spacing: -0.4px;
+    line-height: 1.05;
+    color: var(--ink);
+  }
+
+  .title {
+    font-size: 12pt;
+    font-weight: 600;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 1.6px;
+    margin-top: 4px;
+  }
+
+  .contact {
+    margin-top: 10px;
+    font-size: 9.4pt;
+    color: var(--muted);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 14px;
+  }
+  .contact a { color: var(--muted); text-decoration: none; }
+  .contact span.sep { color: var(--rule); }
+  .contact .pin { color: var(--accent); font-weight: 600; }
+
+  /* ---------- Sections ---------- */
+  section { margin-top: 18px; }
+
+  h2 {
+    font-size: 10.5pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+    color: var(--accent);
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 10px;
+  }
+
+  .summary { color: #2c333b; font-size: 10.4pt; }
+
+  /* ---------- Experience ---------- */
+  .role { margin-bottom: 15px; }
+  .role:last-child { margin-bottom: 4px; }
+
+  .role-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .role-company { font-size: 11pt; font-weight: 700; color: var(--ink); }
+  .role-pos { font-size: 10.3pt; font-weight: 600; color: var(--accent); }
+  .role-dates {
+    font-size: 9.2pt;
+    color: var(--faint);
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+  }
+  .role-meta { font-size: 9.2pt; color: var(--faint); margin-top: 1px; }
+
+  ul.bullets { list-style: none; margin-top: 7px; }
+  ul.bullets li {
+    position: relative;
+    padding-left: 15px;
+    margin-bottom: 5px;
+    color: #2c333b;
+  }
+  ul.bullets li::before {
+    content: "";
+    position: absolute;
+    left: 1px;
+    top: 7px;
+    width: 5px;
+    height: 5px;
+    background: var(--accent);
+    border-radius: 1px;
+    transform: rotate(45deg);
+  }
+  .bullets strong { color: var(--ink); font-weight: 600; }
+
+  /* ---------- Skills ---------- */
+  .skill-grid { display: grid; grid-template-columns: 145px 1fr; gap: 7px 14px; }
+  .skill-label { font-weight: 600; color: var(--ink); font-size: 9.8pt; }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+  .tag {
+    background: var(--accent-soft);
+    color: var(--accent);
+    border: 1px solid #dbe6ec;
+    border-radius: 4px;
+    padding: 1.5px 8px;
+    font-size: 8.8pt;
+    font-weight: 500;
+    line-height: 1.6;
+  }
+  .tag.soft { background: #fff; color: var(--muted); border-color: var(--rule); }
+
+  /* ---------- Two-up footer rows ---------- */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+
+  .edu-company { font-weight: 700; color: var(--ink); }
+  .edu-line { color: var(--muted); }
+  .edu-dates { font-size: 9.2pt; color: var(--faint); }
+
+  .inline-list { color: #2c333b; }
+
+  /* ---------- Print ---------- */
+  @page { size: A4; margin: 0; }
+  @media print {
+    html, body { background: #fff; font-size: 10pt; }
+    .toolbar { display: none; }
+    .sheet { margin: 0; box-shadow: none; width: auto; min-height: 0; padding: 14mm 15mm; }
+    .role, section { page-break-inside: avoid; }
+    a { color: var(--muted); }
+  }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <a class="tb-back" href="./">&larr; Back to portfolio</a>
+  <button class="tb-print" type="button" onclick="window.print()">Print / Save as PDF</button>
+</div>
+
+<div class="sheet">
+
+  <header>
+    <div class="name">Marikaimu Chris Ardoña</div>
+    <div class="title">Senior Front End Developer</div>
+    <div class="contact">
+      <span class="pin">Bulacan, Philippines</span>
+      <span class="sep">•</span>
+      <a href="mailto:chris.ardona@gmail.com">chris.ardona@gmail.com</a>
+      <span class="sep">•</span>
+      <a href="https://www.linkedin.com/in/marikaimu-chris-ardona/">linkedin.com/in/marikaimu-chris-ardona</a>
+    </div>
+  </header>
+
+  <section>
+    <h2>Profile</h2>
+    <p class="summary">
+      Senior Front End Developer with around ten years of experience building and leading the front end of
+      client-facing web applications. Lead developer on multiple live products spanning payments, identity
+      verification, events, and subscriptions, working primarily in JavaScript, Vue, Liquid, and GraphQL with
+      Stripe, Make.com, and SendGrid integrations, and currently expanding into React and TypeScript. Known as
+      the go-to developer for complex, hard-to-reproduce issues, with a track record of mentoring colleagues,
+      introducing reusable processes, and building internal AI tooling that the wider team relies on daily.
+    </p>
+  </section>
+
+  <section>
+    <h2>Experience</h2>
+
+    <div class="role">
+      <div class="role-head">
+        <div>
+          <span class="role-company">Complete Business Online</span>
+          <span style="color:var(--rule)"> — </span>
+          <span class="role-pos">Senior Front End Web Developer</span>
+        </div>
+        <div class="role-dates">Mar 2023 – Present</div>
+      </div>
+      <div class="role-meta">Remote · Australian digital agency · Promoted from Web Developer to Senior, Nov 2025</div>
+      <ul class="bullets">
+        <li><strong>Lead front-end developer</strong> on client-facing web applications built on the company's proprietary
+          instance-admin platform (CMS, e-commerce, and CRM) integrated with point-of-sale, using Liquid, JavaScript,
+          Vue, CSS, and GraphQL.</li>
+        <li>Led the front-end build of <strong>NCCHC (National Criminal Checks)</strong>, an Australian criminal background-check
+          platform, including Stripe payments and the front end of a points-based ID and selfie verification flow,
+          integrating the AWS Rekognition and NSS submission APIs delivered by the backend team, plus complex
+          name-validation logic across legal name, alias, and maiden name. Live since June 2025.</li>
+        <li>Led the front-end for the <strong>Australian British Chamber of Commerce (ABCC)</strong> events platform, integrating Make.com automation
+          to sync Xero and SendGrid and surface error alerts to Slack in real time. Live since April 2024.</li>
+        <li>Led the front-end for the <strong>Real Estate Institute of Australia</strong>, delivering the company's first
+          Stripe subscription-webhook implementation alongside Make.com-driven Xero and SendGrid updates. Live since
+          February 2026.</li>
+        <li>Designed and built a <strong>company-wide AI automation toolkit</strong> (built on Claude) covering end-of-day
+          reports, task summaries, deployment plans, and post-deployment steps, cutting the PR and deployment workflow
+          from roughly 30 minutes to about 5 minutes and adopted by nearly the entire team for daily use.</li>
+        <li>Diagnosed <strong>hard-to-reproduce production issues</strong> by instrumenting targeted logging to expose silent
+          failures, then proposing fixes and monitoring closely post-release.</li>
+        <li>Acted as the team's <strong>trusted point of contact for complex support tickets</strong>, mentored colleagues, and
+          introduced reusable processes and standards across the development team.</li>
+      </ul>
+    </div>
+
+    <div class="role">
+      <div class="role-head">
+        <div>
+          <span class="role-company">Coredata Research Inc.</span>
+          <span style="color:var(--rule)"> — </span>
+          <span class="role-pos">Web Developer</span>
+        </div>
+        <div class="role-dates">Aug 2018 – Mar 2023</div>
+      </div>
+      <div class="role-meta">In-house development team</div>
+      <ul class="bullets">
+        <li>In-house developer focused on <strong>LimeSurvey customisation</strong>, building tailored survey logic and
+          modifications primarily in JavaScript.</li>
+        <li>Maintained the company's <strong>WordPress websites across the AU, EU, and US regions</strong>, keeping plugins
+          and integrations current and stable.</li>
+      </ul>
+    </div>
+
+    <div class="role">
+      <div class="role-head">
+        <div>
+          <span class="role-company">QQFrance Digital Solutions Inc.</span>
+          <span style="color:var(--rule)"> — </span>
+          <span class="role-pos">Web Developer</span>
+        </div>
+        <div class="role-dates">Aug 2016 – Apr 2018</div>
+      </div>
+      <div class="role-meta">Early-stage startup</div>
+      <ul class="bullets">
+        <li>Built reusable <strong>template websites</strong> for resale using HTML, CSS, JavaScript, Bootstrap, and AngularJS.</li>
+        <li>Established core front-end fundamentals at the start of a web development career.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Technical Skills</h2>
+    <div class="skill-grid">
+      <div class="skill-label">Languages &amp; Markup</div>
+      <div class="skill-tags">
+        <span class="tag">JavaScript</span>
+        <span class="tag">HTML5</span>
+        <span class="tag">CSS3</span>
+        <span class="tag">Liquid</span>
+        <span class="tag">TypeScript (working knowledge)</span>
+      </div>
+
+      <div class="skill-label">Frameworks &amp; Libraries</div>
+      <div class="skill-tags">
+        <span class="tag">Vue.js</span>
+        <span class="tag">React (working knowledge)</span>
+        <span class="tag">Bootstrap</span>
+      </div>
+
+      <div class="skill-label">APIs &amp; Data</div>
+      <div class="skill-tags">
+        <span class="tag">GraphQL</span>
+        <span class="tag">REST integrations</span>
+        <span class="tag">Webhooks</span>
+      </div>
+
+      <div class="skill-label">Integrations &amp; Services</div>
+      <div class="skill-tags">
+        <span class="tag">Stripe</span>
+        <span class="tag">Make.com</span>
+        <span class="tag">SendGrid</span>
+        <span class="tag">Xero</span>
+      </div>
+
+      <div class="skill-label">Tooling &amp; Workflow</div>
+      <div class="skill-tags">
+        <span class="tag">Git / GitHub</span>
+        <span class="tag">Cursor AI</span>
+        <span class="tag">Claude AI</span>
+        <span class="tag">Slack</span>
+        <span class="tag">Teamwork</span>
+      </div>
+
+      <div class="skill-label">Platforms</div>
+      <div class="skill-tags">
+        <span class="tag">WordPress</span>
+        <span class="tag">LimeSurvey</span>
+        <span class="tag">Instance-admin (CMS / e-commerce / CRM)</span>
+      </div>
+
+      <div class="skill-label">Strengths</div>
+      <div class="skill-tags">
+        <span class="tag soft">Front-end leadership</span>
+        <span class="tag soft">Mentoring &amp; coaching</span>
+        <span class="tag soft">Debugging silent failures</span>
+        <span class="tag soft">Third-party integration</span>
+        <span class="tag soft">Process building</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="two-col">
+      <div>
+        <h2>Education</h2>
+        <div class="edu-company">Bachelor of Science in Computer Science</div>
+        <div class="edu-line">STI College Balagtas</div>
+        <div class="edu-dates">Graduated May 2015</div>
+      </div>
+      <div>
+        <h2>Awards &amp; Languages</h2>
+        <div class="inline-list">
+          <strong>Employee of the Month</strong> (multiple times) — Complete Business Online
+        </div>
+        <div class="inline-list" style="margin-top:7px;">
+          <strong>Languages:</strong> English, Filipino
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>

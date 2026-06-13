@@ -369,13 +369,27 @@ body.dialog-open { overflow: hidden; }
 .section-contact {
   background: var(--bg-alt);
   border-top: 1px solid var(--rule);
-  text-align: center;
 }
-.contact-inner { max-width: 620px; }
+.contact-inner { max-width: var(--maxw); }
 .contact-eyebrow { text-transform: uppercase; letter-spacing: 2.5px; font-size: 13px; font-weight: 700; color: var(--accent-2); }
-.section-contact h2 { font-size: clamp(28px, 4.5vw, 42px); letter-spacing: -.6px; margin-top: 10px; font-weight: 800; }
-.contact-lead { margin-top: 16px; color: var(--muted); font-size: 18px; }
-.contact-actions { margin-top: 30px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.section-contact h2 { font-size: clamp(30px, 5vw, 48px); letter-spacing: -.01em; margin-top: 12px; }
+.contact-lead { margin-top: 16px; color: var(--muted); font-size: 18px; max-width: 54ch; }
+.contact-email {
+  display: inline-block;
+  margin-top: 32px;
+  font-family: var(--font-serif);
+  font-size: clamp(22px, 3.6vw, 34px);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  border-bottom: 2px solid var(--rule);
+  padding-bottom: 5px;
+  transition: border-color .2s ease, color .2s ease;
+}
+.contact-email:hover { border-color: var(--accent); color: var(--accent); }
+.contact-links { list-style: none; display: flex; flex-wrap: wrap; gap: 26px; margin-top: 30px; }
+.contact-links a { font-size: 15px; font-weight: 600; color: var(--muted); }
+.contact-links a:hover { color: var(--accent); }
 
 /* ---------- Footer ---------- */
 .site-footer { border-top: 1px solid var(--rule); padding: 28px 0; }

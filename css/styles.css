@@ -20,6 +20,7 @@
   --panel:     #17171a;
   --panel-ink: #f3f3f1;
   --shadow:    0 1px 2px rgba(20,20,24,.04), 0 4px 14px rgba(20,20,24,.05);
+  --dot:       rgba(23,23,26,.18);
   --radius:    9px;
   --maxw:      1080px;
   --font:      "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -43,6 +44,7 @@
   --panel:     #08080a;
   --panel-ink: #f3f3f1;
   --shadow:    0 1px 3px rgba(0,0,0,.5), 0 10px 28px rgba(0,0,0,.45);
+  --dot:       rgba(242,242,240,.16);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -134,12 +136,28 @@ a { color: var(--accent); text-decoration: none; }
 :root[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
 
 /* ---------- Hero ---------- */
+@property --mx { syntax: "<percentage>"; inherits: false; initial-value: 50%; }
+@property --my { syntax: "<percentage>"; inherits: false; initial-value: 26%; }
+
 .hero {
   position: relative;
   padding: 104px 0 88px;
   background: var(--bg);
   overflow: hidden;
 }
+/* Interactive dot grid revealed by a soft spotlight that follows the cursor */
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle at center, var(--dot) 1.1px, transparent 1.6px);
+  background-size: 24px 24px;
+  -webkit-mask-image: radial-gradient(300px circle at var(--mx) var(--my), #000 0%, rgba(0,0,0,.4) 45%, transparent 72%);
+  mask-image: radial-gradient(300px circle at var(--mx) var(--my), #000 0%, rgba(0,0,0,.4) 45%, transparent 72%);
+  transition: --mx .28s ease-out, --my .28s ease-out;
+}
+.hero-inner { position: relative; z-index: 1; }
 .hero-eyebrow {
   text-transform: uppercase;
   letter-spacing: 2.5px;

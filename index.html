@@ -555,22 +555,65 @@
       <div class="container">
         <header class="section-head reveal">
           <h2>Building With AI</h2>
+          <p class="section-sub">A suite of internal automation tools I designed and built on Claude, now used across the team every day. They cut our PR and deployment workflow from around 30 minutes to about 5, and cluster around delivery discipline and visibility: shipping releases safely, verifying quality, and keeping everyone informed.</p>
         </header>
-        <div class="tooling-card reveal">
-          <div class="tooling-content">
-            <h3>Company-wide AI automation toolkit</h3>
-            <p>
-              I designed and built an internal AI automation toolkit (built on Claude) that handles
-              everyday engineering workflows: end-of-day reports, task summaries, deployment plans, and
-              post-deployment steps. It cut our PR and deployment workflow from around 30 minutes to about
-              5 minutes and is now used by nearly the entire team, every day.
-            </p>
-          </div>
-          <ul class="tooling-stats">
-            <li><strong>~30m &rarr; ~5m</strong><span>PR &amp; deployment workflow</span></li>
-            <li><strong>Team-wide</strong><span>Daily adoption</span></li>
-            <li><strong>4+</strong><span>Automated workflows</span></li>
-          </ul>
+
+        <div class="tool-grid">
+
+          <article class="tool-card reveal">
+            <h3>deployment-plan</h3>
+            <p class="tool-what">Generates a structured deployment plan for a release: steps, rollback tag, PR, downtime, and comms.</p>
+            <div class="tool-help">
+              <span class="tool-label">Team impact</span>
+              <p>Gives every developer a consistent, repeatable release process, removing guesswork and reducing deployment mistakes across the team.</p>
+            </div>
+          </article>
+
+          <article class="tool-card reveal">
+            <h3>post-deployment</h3>
+            <p class="tool-what">Runs the full post-release cleanup: pushes master, aligns the UAT branch, tags the release, updates the deployment calendar, posts the release note, and hands off to support.</p>
+            <div class="tool-help">
+              <span class="tool-label">Team impact</span>
+              <p>Closes the loop on every deployment automatically, keeping release records and project tracking accurate so anyone backtracking a release has a reliable audit trail.</p>
+            </div>
+          </article>
+
+          <article class="tool-card reveal">
+            <h3>spec-check-report</h3>
+            <p class="tool-what">Checks a build against its spec and reports the gaps.</p>
+            <div class="tool-help">
+              <span class="tool-label">Team impact</span>
+              <p>Helps developers and QA catch missed requirements before handover, improving delivery quality and cutting rework.</p>
+            </div>
+          </article>
+
+          <article class="tool-card reveal">
+            <h3>generate-documentation</h3>
+            <p class="tool-what">Turns a project's component markdown into a branded, client-ready document.</p>
+            <div class="tool-help">
+              <span class="tool-label">Team impact</span>
+              <p>Lets any team member produce consistent, well-formatted documentation fast, with no manual formatting.</p>
+            </div>
+          </article>
+
+          <article class="tool-card reveal">
+            <h3>task-summary</h3>
+            <p class="tool-what">Reads a task and its full comment thread and produces a structured catch-up summary.</p>
+            <div class="tool-help">
+              <span class="tool-label">Team impact</span>
+              <p>Anyone joining a task gets up to speed in seconds instead of reading every comment, which is especially valuable for a distributed team.</p>
+            </div>
+          </article>
+
+          <article class="tool-card reveal">
+            <h3>eod-report</h3>
+            <p class="tool-what">Pulls daily time logs, classifies deliverables vs meetings, captures the logs, and posts an end-of-day or midday standup.</p>
+            <div class="tool-help">
+              <span class="tool-label">Team impact</span>
+              <p>Standardises daily reporting across the team and gives managers visibility on billable vs non-billable time and what shipped each day.</p>
+            </div>
+          </article>
+
         </div>
       </div>
     </section>

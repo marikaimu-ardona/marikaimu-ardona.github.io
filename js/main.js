@@ -175,14 +175,14 @@
     }
   });
 
-  // --- Interactive hero spotlight grid ---
-  var hero = document.querySelector(".hero");
-  var heroGrid = document.querySelector(".hero-grid");
-  if (hero && heroGrid && !prefersReduced) {
-    hero.addEventListener("pointermove", function (e) {
-      var r = hero.getBoundingClientRect();
-      heroGrid.style.setProperty("--mx", (((e.clientX - r.left) / r.width) * 100).toFixed(2) + "%");
-      heroGrid.style.setProperty("--my", (((e.clientY - r.top) / r.height) * 100).toFixed(2) + "%");
+  // --- Interactive spotlight grid on the hero and every section ---
+  if (!prefersReduced) {
+    document.querySelectorAll(".hero, .section").forEach(function (el) {
+      el.addEventListener("pointermove", function (e) {
+        var r = el.getBoundingClientRect();
+        el.style.setProperty("--mx", (((e.clientX - r.left) / r.width) * 100).toFixed(2) + "%");
+        el.style.setProperty("--my", (((e.clientY - r.top) / r.height) * 100).toFixed(2) + "%");
+      });
     });
   }
 })();

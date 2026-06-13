@@ -136,8 +136,8 @@ a { color: var(--accent); text-decoration: none; }
 :root[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
 
 /* ---------- Hero ---------- */
-@property --mx { syntax: "<percentage>"; inherits: false; initial-value: 50%; }
-@property --my { syntax: "<percentage>"; inherits: false; initial-value: 26%; }
+@property --mx { syntax: "<percentage>"; inherits: true; initial-value: 50%; }
+@property --my { syntax: "<percentage>"; inherits: true; initial-value: 30%; }
 
 .hero {
   position: relative;
@@ -145,11 +145,16 @@ a { color: var(--accent); text-decoration: none; }
   background: var(--bg);
   overflow: hidden;
 }
-/* Interactive dot grid revealed by a soft spotlight that follows the cursor */
-.hero-grid {
+.hero-inner { position: relative; z-index: 1; }
+
+/* Interactive dot grid revealed by a soft spotlight that follows the cursor,
+   applied to the hero and every section (behind content, pointer-safe). */
+.hero, .section { position: relative; isolation: isolate; }
+.hero::before, .section::before {
+  content: "";
   position: absolute;
   inset: 0;
-  z-index: 0;
+  z-index: -1;
   pointer-events: none;
   background-image: radial-gradient(circle at center, var(--dot) 1.1px, transparent 1.6px);
   background-size: 24px 24px;
@@ -157,7 +162,6 @@ a { color: var(--accent); text-decoration: none; }
   mask-image: radial-gradient(300px circle at var(--mx) var(--my), #000 0%, rgba(0,0,0,.4) 45%, transparent 72%);
   transition: --mx .28s ease-out, --my .28s ease-out;
 }
-.hero-inner { position: relative; z-index: 1; }
 .hero-eyebrow {
   text-transform: uppercase;
   letter-spacing: 2.5px;

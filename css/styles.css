@@ -316,13 +316,32 @@ body.dialog-open { overflow: hidden; }
 .tool-label { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: .9px; font-weight: 700; color: var(--faint); margin-bottom: 6px; }
 .tool-help p { color: var(--muted); font-size: 14.5px; }
 
-/* ---------- Skills ---------- */
-.skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
-.skill-group { background: var(--card); border: 1px solid var(--rule); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow); }
-.skill-group h4 { font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); margin-bottom: 14px; }
-.skill-group ul { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
-.skill-group li { font-size: 14px; font-weight: 500; color: var(--ink); background: var(--bg-alt); border-radius: 7px; padding: 6px 12px; }
-.skill-group .lvl { display: block; font-size: 11px; font-weight: 500; color: var(--faint); margin-top: 1px; }
+/* ---------- Skills (definition list) ---------- */
+.skills-list { border-top: 1px solid var(--rule); }
+.skill-row {
+  display: grid;
+  grid-template-columns: 230px 1fr;
+  gap: 36px;
+  align-items: baseline;
+  padding: 22px 4px;
+  border-bottom: 1px solid var(--rule);
+}
+.skill-row dt {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  font-weight: 700;
+  color: var(--faint);
+  padding-top: 4px;
+}
+.skill-row dd {
+  font-family: var(--font-serif);
+  font-size: clamp(17px, 2vw, 21px);
+  line-height: 1.55;
+  color: var(--ink);
+  font-weight: 400;
+}
+.skill-note { font-family: var(--font); font-size: 13px; color: var(--faint); }
 
 /* ---------- Timeline ---------- */
 .timeline { list-style: none; position: relative; padding-left: 26px; }
@@ -378,7 +397,6 @@ body.dialog-open { overflow: hidden; }
 @media (max-width: 860px) {
   .about-grid { grid-template-columns: 1fr; gap: 22px; }
   .tool-grid { grid-template-columns: repeat(2, 1fr); }
-  .skills-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* Collapse the nav to a toggle menu before the links crowd the toggle */
@@ -453,7 +471,7 @@ body.dialog-open { overflow: hidden; }
   body { font-size: 16px; }
   .projects { grid-template-columns: 1fr; }
   .tool-grid { grid-template-columns: 1fr; }
-  .skills-grid { grid-template-columns: 1fr; }
+  .skill-row { grid-template-columns: 1fr; gap: 6px; padding: 18px 4px; }
   .dialog-figure--grid { grid-template-columns: 1fr; }
   .hero { padding: 64px 0 56px; }
   .hero-stats { gap: 26px; }

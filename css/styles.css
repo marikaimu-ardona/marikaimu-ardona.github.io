@@ -343,16 +343,27 @@ body.dialog-open { overflow: hidden; }
 }
 .skill-note { font-family: var(--font); font-size: 13px; color: var(--faint); }
 
-/* ---------- Timeline ---------- */
-.timeline { list-style: none; position: relative; padding-left: 26px; }
-.timeline::before { content: ""; position: absolute; left: 6px; top: 6px; bottom: 6px; width: 2px; background: var(--rule); }
-.timeline li { position: relative; padding-bottom: 34px; }
-.timeline li:last-child { padding-bottom: 0; }
-.timeline li::before { content: ""; position: absolute; left: -26px; top: 6px; width: 14px; height: 14px; border-radius: 50%; background: #fff; border: 3px solid var(--accent); }
-.tl-dates { font-size: 13px; font-weight: 700; color: var(--accent-2); letter-spacing: .5px; text-transform: uppercase; }
-.tl-body h3 { font-size: 20px; font-weight: 700; margin-top: 4px; }
-.tl-company { font-weight: 600; color: var(--muted); margin-bottom: 6px; }
-.tl-body p:last-child { color: var(--muted); font-size: 16px; }
+/* ---------- Experience ---------- */
+.xp-list { border-top: 1px solid var(--rule); }
+.xp-row {
+  display: grid;
+  grid-template-columns: 230px 1fr;
+  gap: 36px;
+  padding: 30px 4px;
+  border-bottom: 1px solid var(--rule);
+}
+.xp-period {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  font-weight: 700;
+  color: var(--faint);
+  padding-top: 7px;
+  white-space: nowrap;
+}
+.xp-role { font-size: 22px; }
+.xp-company { font-weight: 600; color: var(--accent); margin-top: 3px; font-size: 15px; }
+.xp-desc { margin-top: 13px; color: var(--muted); font-size: 16px; max-width: 64ch; }
 
 /* ---------- Contact ---------- */
 .section-contact {
@@ -380,8 +391,7 @@ body.dialog-open { overflow: hidden; }
 .section-contact h2,
 .project-title,
 .dialog-content h3,
-.tl-body h3,
-.tooling-content h3 {
+.xp-role {
   font-family: var(--font-serif);
   font-weight: 600;
   font-optical-sizing: auto;
@@ -472,6 +482,7 @@ body.dialog-open { overflow: hidden; }
   .projects { grid-template-columns: 1fr; }
   .tool-grid { grid-template-columns: 1fr; }
   .skill-row { grid-template-columns: 1fr; gap: 6px; padding: 18px 4px; }
+  .xp-row { grid-template-columns: 1fr; gap: 8px; padding: 24px 4px; }
   .dialog-figure--grid { grid-template-columns: 1fr; }
   .hero { padding: 64px 0 56px; }
   .hero-stats { gap: 26px; }

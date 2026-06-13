@@ -106,12 +106,20 @@
   .inline-list { color: var(--muted); }
 
   /* ---------- Print ---------- */
-  @page { size: A4; margin: 0; }
+  @page { size: A4; margin: 14mm 15mm; }
   @media print {
-    html, body { background: #fff; font-size: 10.2pt; }
+    html, body {
+      background: #fff;
+      font-size: 10.2pt;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
     .toolbar { display: none; }
-    .sheet { margin: 0; box-shadow: none; width: auto; min-height: 0; padding: 15mm 16mm; }
-    .role, section { page-break-inside: avoid; }
+    /* Per-page margins come from @page, so the sheet sits flush */
+    .sheet { margin: 0; box-shadow: none; width: auto; min-height: 0; padding: 0; }
+    .role { page-break-inside: avoid; break-inside: avoid; }
+    .role-company, .skill-row { break-inside: avoid; }
+    h2, .role-head { break-after: avoid; }
     a { color: var(--muted); }
   }
 </style>

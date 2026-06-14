@@ -47,9 +47,13 @@
   }
   .toolbar .tb-back { font-size: 11pt; font-weight: 600; color: var(--ink); text-decoration: none; }
   .toolbar .tb-back:hover { opacity: .7; }
+  .toolbar .tb-actions { display: flex; align-items: center; gap: 14px; }
+  .toolbar .tb-link { font-size: 10.5pt; font-weight: 600; color: var(--muted); text-decoration: none; }
+  .toolbar .tb-link:hover { color: var(--ink); }
   .toolbar .tb-print {
     border: 0; cursor: pointer; background: var(--ink); color: #fff;
     font-size: 10.5pt; font-weight: 600; padding: 9px 18px; border-radius: 7px;
+    display: inline-block; text-decoration: none;
     transition: opacity .15s ease;
   }
   .toolbar .tb-print:hover { opacity: .85; }
@@ -128,7 +132,10 @@
 
 <div class="toolbar">
   <a class="tb-back" href="./">&larr; Back to portfolio</a>
-  <button class="tb-print" type="button" onclick="window.print()">Print / Save as PDF</button>
+  <div class="tb-actions">
+    <a class="tb-link" href="#" onclick="window.print();return false;">Print</a>
+    <a class="tb-print" href="Marikaimu-Chris-Ardona-Resume.pdf" download>Download PDF</a>
+  </div>
 </div>
 
 <div class="sheet">

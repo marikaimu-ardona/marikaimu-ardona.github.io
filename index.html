@@ -164,6 +164,26 @@
             </div>
           </article>
 
+          <article class="project-card reveal" data-dialog="dlg-petclinic">
+            <div class="project-banner project-banner--top">
+              <img src="img/petclinic/petclinic_dashboard.png" alt="Kindred Paws clinic management dashboard" loading="lazy" />
+            </div>
+            <div class="project-card-body">
+              <div class="project-meta">
+                <span class="project-tag-role">Personal Project</span>
+                <span class="project-date">2026</span>
+              </div>
+              <h3 class="project-title">Kindred Paws &mdash; Clinic Management</h3>
+              <p class="project-blurb">A full-stack veterinary clinic app I designed and built end to end: appointments, a vet calendar, grooming scheduling, client and pet records, and staff management.</p>
+              <ul class="project-tech">
+                <li>React</li><li>Vite</li><li>Tailwind CSS</li><li>Supabase</li><li>PostgreSQL</li><li>Auth + RLS</li>
+              </ul>
+              <button type="button" class="project-view" data-dialog="dlg-petclinic" aria-haspopup="dialog" aria-controls="dlg-petclinic">
+                View details <span aria-hidden="true">&rarr;</span>
+              </button>
+            </div>
+          </article>
+
           <article class="project-card reveal" data-dialog="dlg-reia">
             <div class="project-banner">
               <img src="img/reia/reia_banner.png" alt="Real Estate Institute of Australia logo" loading="lazy" />
@@ -702,6 +722,51 @@
                 <a class="btn btn-primary" href="https://www.reia.com.au/" target="_blank" rel="noopener noreferrer">
                   Visit live site <span aria-hidden="true">&rarr;</span>
                 </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="dialog-backdrop" id="dlg-petclinic" role="dialog" aria-modal="true" aria-labelledby="dlg-petclinic-t" hidden>
+            <div class="dialog">
+              <button class="dialog-close" type="button" aria-label="Close details">&times;</button>
+              <figure class="dialog-figure dialog-figure--grid">
+                <img src="img/petclinic/petclinic_dashboard.png" alt="Kindred Paws dashboard with today's schedule and clinic stats" />
+                <img src="img/petclinic/petclinic_calendar.png" alt="Kindred Paws weekly vet appointment calendar" />
+                <img src="img/petclinic/petclinic_clients.png" alt="Kindred Paws client and pet records with medical history" />
+                <img src="img/petclinic/petclinic_grooming.png" alt="Kindred Paws grooming schedule with staff on duty" />
+              </figure>
+              <div class="dialog-content">
+                <div class="project-meta">
+                  <span class="project-tag-role">Personal Project</span>
+                  <span class="project-date">Full-stack build &middot; Live demo</span>
+                </div>
+                <h3 id="dlg-petclinic-t">Kindred Paws &mdash; Clinic Management</h3>
+                <p>
+                  A web application for running a veterinary clinic, designed and built end to end on my own.
+                  It covers appointment booking, a day, week, and month vet calendar, grooming scheduling, full
+                  client and pet records with medical history, staff and user management, and an activity log.
+                </p>
+                <p>
+                  I built the whole stack: a React single-page app with lazy-loaded routes and a custom Tailwind
+                  design system on the front end, backed by Supabase with a PostgreSQL schema, email authentication,
+                  and Row Level Security protecting every table. The project is open source.
+                </p>
+                <ul class="project-tech">
+                  <li>React</li><li>Vite</li><li>Tailwind CSS</li><li>Supabase</li><li>PostgreSQL</li><li>Auth</li><li>Row Level Security</li><li>JavaScript</li>
+                </ul>
+                <div class="dialog-creds">
+                  <strong>Sign in to the live demo</strong>
+                  <span>admin@kindredpaws.com</span>
+                  <span>Q9chOFzAiC2L5cAa9!</span>
+                </div>
+                <div class="dialog-actions">
+                  <a class="btn btn-primary" href="https://marikaimu-ardona.github.io/pet-clinic-management/" target="_blank" rel="noopener noreferrer">
+                    Visit live demo <span aria-hidden="true">&rarr;</span>
+                  </a>
+                  <a class="btn btn-ghost" href="https://github.com/marikaimu-ardona/pet-clinic-management" target="_blank" rel="noopener noreferrer">
+                    View code <span aria-hidden="true">&rarr;</span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>

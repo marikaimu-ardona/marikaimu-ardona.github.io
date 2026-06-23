@@ -295,6 +295,11 @@ a { color: var(--accent); text-decoration: none; }
 .dialog-content .btn { margin-top: 22px; gap: 9px; }
 .dialog-content .btn span { display: inline-block; transition: transform .18s ease; }
 .dialog-content .btn:hover span { transform: translateX(5px); }
+.dialog-creds { margin-top: 20px; padding: 13px 16px; border: 1px dashed var(--rule); border-radius: 8px; background: var(--card); display: flex; flex-direction: column; gap: 3px; }
+.dialog-creds strong { font-size: 11.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .8px; color: var(--accent); margin-bottom: 4px; }
+.dialog-creds span { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 14px; color: var(--ink); }
+.dialog-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.dialog-actions .btn { margin-top: 22px; }
 body.dialog-open { overflow: hidden; }
 
 /* ---------- AI Tooling (card grid) ---------- */

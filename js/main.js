@@ -106,7 +106,6 @@
   }
 
   // --- Project detail dialogs ---
-  var projectsWrap = document.querySelector(".projects");
   var lastFocused = null;
 
   function openDialog(id) {
@@ -128,15 +127,14 @@
     }
   }
 
-  if (projectsWrap) {
-    projectsWrap.addEventListener("click", function (e) {
-      var trigger = e.target.closest("[data-dialog]");
-      if (trigger) {
-        e.preventDefault();
-        openDialog(trigger.getAttribute("data-dialog"));
-      }
-    });
-  }
+  // Delegate from the document so dialog triggers work in any section.
+  document.addEventListener("click", function (e) {
+    var trigger = e.target.closest("[data-dialog]");
+    if (trigger) {
+      e.preventDefault();
+      openDialog(trigger.getAttribute("data-dialog"));
+    }
+  });
 
   var backdrops = document.querySelectorAll(".dialog-backdrop");
   backdrops.forEach(function (dlg) {

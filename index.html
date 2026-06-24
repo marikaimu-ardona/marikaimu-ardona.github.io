@@ -66,6 +66,7 @@
           <ul class="nav-menu" id="nav-menu">
             <li><a href="#about">About</a></li>
             <li><a href="#work">Work</a></li>
+            <li><a href="#personal">Projects</a></li>
             <li><a href="#tooling">AI Tooling</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#experience">Experience</a></li>
@@ -159,26 +160,6 @@
                 <li>Liquid</li><li>JavaScript</li><li>HTML5</li><li>CSS3</li><li>GraphQL</li><li>Stripe</li>
               </ul>
               <button type="button" class="project-view" data-dialog="dlg-wpt" aria-haspopup="dialog" aria-controls="dlg-wpt">
-                View details <span aria-hidden="true">&rarr;</span>
-              </button>
-            </div>
-          </article>
-
-          <article class="project-card reveal" data-dialog="dlg-petclinic">
-            <div class="project-banner project-banner--top">
-              <img src="img/petclinic/petclinic_dashboard.png" alt="Kindred Paws clinic management dashboard" loading="lazy" />
-            </div>
-            <div class="project-card-body">
-              <div class="project-meta">
-                <span class="project-tag-role">Personal Project</span>
-                <span class="project-date">2026</span>
-              </div>
-              <h3 class="project-title">Kindred Paws &mdash; Clinic Management</h3>
-              <p class="project-blurb">A full-stack veterinary clinic app I designed and built end to end: appointments, a vet calendar, grooming scheduling, client and pet records, and staff management.</p>
-              <ul class="project-tech">
-                <li>React</li><li>Vite</li><li>Tailwind CSS</li><li>Supabase</li><li>PostgreSQL</li><li>Auth + RLS</li>
-              </ul>
-              <button type="button" class="project-view" data-dialog="dlg-petclinic" aria-haspopup="dialog" aria-controls="dlg-petclinic">
                 View details <span aria-hidden="true">&rarr;</span>
               </button>
             </div>
@@ -329,6 +310,44 @@
       </div>
     </section>
 
+    <!-- ============ Personal Projects ============ -->
+    <section id="personal" class="section">
+      <div class="container">
+        <header class="section-head reveal">
+          <h2>Personal Projects</h2>
+          <p class="section-sub">Self-built, open source, and live. Where I work outside the client stack, end to end.</p>
+        </header>
+
+        <article class="featured-card reveal">
+          <div class="featured-media">
+            <img src="img/petclinic/petclinic_dashboard.png" alt="Kindred Paws clinic management dashboard" loading="lazy" />
+          </div>
+          <div class="featured-body">
+            <div class="project-meta">
+              <span class="project-tag-role">Personal Project</span>
+              <span class="project-date">2026 &middot; Live demo</span>
+            </div>
+            <h3 class="project-title">Kindred Paws &mdash; Clinic Management</h3>
+            <p class="project-blurb">A full-stack veterinary clinic app I designed and built end to end: appointments, a vet calendar, grooming scheduling, client and pet records with medical history, and staff management. A React front end on a custom Tailwind design system, backed by Supabase with a PostgreSQL schema, authentication, and Row Level Security on every table.</p>
+            <ul class="project-tech">
+              <li>React</li><li>Vite</li><li>Tailwind CSS</li><li>Supabase</li><li>PostgreSQL</li><li>Auth + RLS</li>
+            </ul>
+            <div class="featured-actions">
+              <a class="btn btn-primary" href="https://marikaimu-ardona.github.io/pet-clinic-management/" target="_blank" rel="noopener noreferrer">
+                Visit live demo <span aria-hidden="true">&rarr;</span>
+              </a>
+              <a class="btn btn-ghost" href="https://github.com/marikaimu-ardona/pet-clinic-management" target="_blank" rel="noopener noreferrer">
+                View code <span aria-hidden="true">&rarr;</span>
+              </a>
+              <button type="button" class="featured-gallery-link" data-dialog="dlg-petclinic" aria-haspopup="dialog" aria-controls="dlg-petclinic">
+                See screenshots <span aria-hidden="true">&rarr;</span>
+              </button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
     <!-- ============ AI Tooling highlight ============ -->
     <section id="tooling" class="section">
       <div class="container">
@@ -410,11 +429,15 @@
           </div>
           <div class="skill-row">
             <dt>Frameworks &amp; Libraries</dt>
-            <dd>Vue.js &middot; React <span class="skill-note">(working knowledge)</span> &middot; Bootstrap</dd>
+            <dd>Vue.js &middot; React &middot; Tailwind CSS &middot; Bootstrap</dd>
           </div>
           <div class="skill-row">
             <dt>APIs &amp; Data</dt>
             <dd>GraphQL &middot; REST integrations &middot; Webhooks</dd>
+          </div>
+          <div class="skill-row">
+            <dt>Backend &amp; Data</dt>
+            <dd>Supabase &middot; PostgreSQL &middot; Auth &amp; Row Level Security</dd>
           </div>
           <div class="skill-row">
             <dt>Integrations &amp; Services</dt>
@@ -422,7 +445,7 @@
           </div>
           <div class="skill-row">
             <dt>Tooling &amp; Workflow</dt>
-            <dd>Git / GitHub &middot; Figma &middot; Cursor AI &middot; Claude AI &middot; Slack &middot; Teamwork</dd>
+            <dd>Git / GitHub &middot; Vite &middot; Figma &middot; Cursor AI &middot; Claude AI &middot; Slack &middot; Teamwork</dd>
           </div>
           <div class="skill-row">
             <dt>Platforms</dt>

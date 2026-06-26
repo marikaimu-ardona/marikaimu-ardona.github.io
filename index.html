@@ -66,7 +66,7 @@
           <ul class="nav-menu" id="nav-menu">
             <li><a href="#about">About</a></li>
             <li><a href="#work">Work</a></li>
-            <li><a href="#personal">Personal Project</a></li>
+            <li><a href="#personal">Personal Projects</a></li>
             <li><a href="#tooling">AI Tooling</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#experience">Experience</a></li>
@@ -314,8 +314,8 @@
     <section id="personal" class="section">
       <div class="container">
         <header class="section-head reveal">
-          <h2>Personal Project</h2>
-          <p class="section-sub">Self-built, open source, and live. Where I work outside the client stack, end to end.</p>
+          <h2>Personal Projects</h2>
+          <p class="section-sub">Self-built, end to end. Where I work outside the client stack, from full-stack apps to AI automations.</p>
         </header>
 
         <article class="featured-card reveal">
@@ -333,6 +333,26 @@
               <li>React</li><li>Vite</li><li>Tailwind CSS</li><li>Supabase</li><li>PostgreSQL</li><li>Auth + RLS</li>
             </ul>
             <button type="button" class="project-view" data-dialog="dlg-petclinic" aria-haspopup="dialog" aria-controls="dlg-petclinic">
+              View details <span aria-hidden="true">&rarr;</span>
+            </button>
+          </div>
+        </article>
+
+        <article class="featured-card reveal">
+          <div class="featured-media">
+            <img src="img/jobcopilot/jobcopilot_canvas.png" alt="Job-Hunt Copilot workflow built in n8n" loading="lazy" />
+          </div>
+          <div class="featured-body">
+            <div class="project-meta">
+              <span class="project-tag-role">Personal Project</span>
+              <span class="project-date">2026</span>
+            </div>
+            <h3 class="project-title">Job-Hunt Copilot</h3>
+            <p class="project-blurb">An n8n automation that reads a job posting, scores the real fit against my r&eacute;sum&eacute; with AI, and drafts a tailored intro in my voice, then shows it on screen, emails it, and logs every run to a tracker.</p>
+            <ul class="project-tech">
+              <li>n8n</li><li>Google Gemini</li><li>LangChain</li><li>Prompt engineering</li><li>Google Sheets</li><li>SMTP</li>
+            </ul>
+            <button type="button" class="project-view" data-dialog="dlg-jobcopilot" aria-haspopup="dialog" aria-controls="dlg-jobcopilot">
               View details <span aria-hidden="true">&rarr;</span>
             </button>
           </div>
@@ -784,6 +804,45 @@
                   </a>
                   <a class="btn btn-ghost" href="https://github.com/marikaimu-ardona/pet-clinic-management" target="_blank" rel="noopener noreferrer">
                     View code <span aria-hidden="true">&rarr;</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="dialog-backdrop" id="dlg-jobcopilot" role="dialog" aria-modal="true" aria-labelledby="dlg-jobcopilot-t" hidden>
+            <div class="dialog">
+              <button class="dialog-close" type="button" aria-label="Close details">&times;</button>
+              <figure class="dialog-figure dialog-figure--grid">
+                <img src="img/jobcopilot/jobcopilot_canvas.png" alt="Job-Hunt Copilot workflow on the n8n canvas" />
+                <img src="img/jobcopilot/jobcopilot_result.png" alt="Fit score and drafted intro shown on the form result screen" />
+                <img src="img/jobcopilot/jobcopilot_email.png" alt="Automated email with fit score, strengths, gaps, and a drafted intro" />
+                <img src="img/jobcopilot/jobcopilot_sheet.png" alt="Google Sheet logging each analysed job with its fit score" />
+              </figure>
+              <div class="dialog-content">
+                <div class="project-meta">
+                  <span class="project-tag-role">Personal Project</span>
+                  <span class="project-date">n8n + AI workflow</span>
+                </div>
+                <h3 id="dlg-jobcopilot-t">Job-Hunt Copilot</h3>
+                <p>
+                  A workflow I built to take the grind out of job hunting. I paste a posting into a form and it
+                  returns an honest fit score, a breakdown of strengths and gaps, and a drafted cover-letter intro
+                  in my voice, shown on screen, emailed to me, and logged to a tracking sheet.
+                </p>
+                <p>
+                  Built in n8n: a form trigger feeds the posting and my r&eacute;sum&eacute; into Google Gemini through a
+                  LangChain chain with a structured-output parser, so the model returns clean, typed fields. The result
+                  fans out to a completion screen, an SMTP email, and a Google Sheets row. The prompt is tuned to score
+                  strictly and write without clich&eacute;s, real postings come back at 25, 55, and 60 out of 100, not
+                  flattering nonsense.
+                </p>
+                <ul class="project-tech">
+                  <li>n8n</li><li>Google Gemini</li><li>LangChain</li><li>Structured output</li><li>Prompt engineering</li><li>Google Sheets</li><li>SMTP</li>
+                </ul>
+                <div class="dialog-actions">
+                  <a class="btn btn-ghost" href="https://github.com/marikaimu-ardona/job-hunt-copilot" target="_blank" rel="noopener noreferrer">
+                    View workflow <span aria-hidden="true">&rarr;</span>
                   </a>
                 </div>
               </div>

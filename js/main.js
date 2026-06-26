@@ -105,6 +105,53 @@
     });
   }
 
+  // --- Image carousel (used inside dialogs) ---
+  function setupGalleries() {
+    document.querySelectorAll("[data-gallery]").forEach(function (g) {
+      var track = g.querySelector(".gallery-track");
+      if (!track) return;
+      var imgs = track.querySelectorAll("img");
+      if (!imgs.length) return;
+      var dotsWrap = g.querySelector(".gallery-dots");
+      var prev = g.querySelector(".gallery-prev");
+      var next = g.querySelector(".gallery-next");
+
+      function go(i) {
+        var idx = (i + imgs.length) % imgs.length;
+        g._galleryIndex = idx;
+        track.style.transform = "translateX(" + (-idx * 100) + "%)";
+        if (dotsWrap) {
+          var dots = dotsWrap.children;
+          for (var d = 0; d < dots.length; d++) {
+            dots[d].classList.toggle("active", d === idx);
+          }
+        }
+      }
+
+      if (imgs.length <= 1) {
+        if (prev) prev.style.display = "none";
+        if (next) next.style.display = "none";
+        if (dotsWrap) dotsWrap.style.display = "none";
+      } else {
+        if (dotsWrap && !dotsWrap.children.length) {
+          imgs.forEach(function (_img, k) {
+            var b = document.createElement("button");
+            b.type = "button";
+            b.setAttribute("aria-label", "Show screenshot " + (k + 1));
+            b.addEventListener("click", function () { go(k); });
+            dotsWrap.appendChild(b);
+          });
+        }
+        if (prev) prev.addEventListener("click", function () { go(g._galleryIndex - 1); });
+        if (next) next.addEventListener("click", function () { go(g._galleryIndex + 1); });
+      }
+
+      g._galleryGo = go;
+      go(0);
+    });
+  }
+  setupGalleries();
+
   // --- Project detail dialogs ---
   var lastFocused = null;
 
@@ -114,6 +161,10 @@
     lastFocused = document.activeElement;
     dlg.hidden = false;
     document.body.classList.add("dialog-open");
+    // Reset any carousel to the first slide
+    dlg.querySelectorAll("[data-gallery]").forEach(function (g) {
+      if (g._galleryGo) g._galleryGo(0);
+    });
     var closeBtn = dlg.querySelector(".dialog-close");
     if (closeBtn) closeBtn.focus();
   }
@@ -153,6 +204,13 @@
     if (e.key === "Escape") {
       closeDialog(open);
       return;
+    }
+
+    // Arrow keys navigate the carousel inside the open dialog
+    var gallery = open.querySelector("[data-gallery]");
+    if (gallery && gallery._galleryGo) {
+      if (e.key === "ArrowRight") { gallery._galleryGo((gallery._galleryIndex || 0) + 1); return; }
+      if (e.key === "ArrowLeft") { gallery._galleryGo((gallery._galleryIndex || 0) - 1); return; }
     }
 
     // Simple focus trap inside the open dialog

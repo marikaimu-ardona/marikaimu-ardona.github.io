@@ -348,7 +348,7 @@
               <span class="project-date">2026</span>
             </div>
             <h3 class="project-title">Job-Hunt Copilot</h3>
-            <p class="project-blurb">An n8n automation that reads a job posting, scores the real fit against my r&eacute;sum&eacute; with AI, and drafts a tailored intro in my voice, then shows it on screen, emails it, and logs every run to a tracker.</p>
+            <p class="project-blurb">An end-to-end AI automation built in n8n: it analyses a job posting against a candidate profile and returns a structured fit assessment, a score backed by the matched strengths and gaps, delivered to a web view, email, and a Google Sheets tracker.</p>
             <ul class="project-tech">
               <li>n8n</li><li>Google Gemini</li><li>LangChain</li><li>Prompt engineering</li><li>Google Sheets</li><li>SMTP</li>
             </ul>
@@ -840,16 +840,16 @@
                 </div>
                 <h3 id="dlg-jobcopilot-t">Job-Hunt Copilot</h3>
                 <p>
-                  A workflow I built to take the grind out of job hunting. I paste a posting into a form and it
-                  returns an honest fit score, a breakdown of strengths and gaps, and a drafted cover-letter intro
-                  in my voice, shown on screen, emailed to me, and logged to a tracking sheet.
+                  An end-to-end AI automation I built to explore agent-style workflows in n8n. A job posting goes in
+                  through a form, and the workflow returns a structured fit assessment, a score backed by the specific
+                  strengths and gaps behind it, delivered to a web view, an email, and a Google Sheets tracker.
                 </p>
                 <p>
-                  Built in n8n: a form trigger feeds the posting and my r&eacute;sum&eacute; into Google Gemini through a
-                  LangChain chain with a structured-output parser, so the model returns clean, typed fields. The result
-                  fans out to a completion screen, an SMTP email, and a Google Sheets row. The prompt is tuned to score
-                  strictly and write without clich&eacute;s, real postings come back at 25, 55, and 60 out of 100, not
-                  flattering nonsense.
+                  Under the hood, a form trigger passes the posting and a candidate profile into Google Gemini through a
+                  LangChain chain with a structured-output parser, so the model returns clean, typed fields rather than
+                  free text. The result fans out to a completion screen, an SMTP email, and a Google Sheets row. The
+                  prompt is engineered to score strictly and honestly, real postings come back at 25, 55, and 60 out of
+                  100 rather than inflated, which keeps the assessment trustworthy.
                 </p>
                 <ul class="project-tech">
                   <li>n8n</li><li>Google Gemini</li><li>LangChain</li><li>Structured output</li><li>Prompt engineering</li><li>Google Sheets</li><li>SMTP</li>
